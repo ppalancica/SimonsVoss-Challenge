@@ -100,11 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				6FDAD0EB29CCF77C007AD3A6 /* App */,
-				6FDAD0E229CCF1A5007AD3A6 /* Models */,
-				6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */,
-				6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */,
 				6FDAD0BE29CCE35B007AD3A6 /* Info.plist */,
-				6FDAD0BB29CCE35B007AD3A6 /* LaunchScreen.storyboard */,
+				6FDAD0E229CCF1A5007AD3A6 /* Models */,
+				6FDAD0EE29CCF8A1007AD3A6 /* Resources */,
+				6FDAD0EC29CCF86B007AD3A6 /* UI */,
 			);
 			path = "SimonsVoss-Challenge";
 			sourceTree = "<group>";
@@ -137,10 +136,27 @@
 		6FDAD0EB29CCF77C007AD3A6 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAD0E029CCEA5D007AD3A6 /* LockListViewController.swift */,
+				6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */,
 				6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		6FDAD0EC29CCF86B007AD3A6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0E029CCEA5D007AD3A6 /* LockListViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6FDAD0EE29CCF8A1007AD3A6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */,
+				6FDAD0BB29CCE35B007AD3A6 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
