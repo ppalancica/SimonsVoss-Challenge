@@ -9,16 +9,9 @@ import UIKit
 
 final class LockListViewController: UIViewController {
 
-    internal let lockItems: [Lock] = [
-        Lock(id: UUID(),
-             buildingId: UUID(),
-             type: "Cylinder",
-             name: "Gästezimmer 4.OG",
-             description: "null",
-             serialNumber: "UID-A89F98F3",
-             floor: "4.OG",
-             roomNumber: "454")
-    ]
+    private var locksDataService = LocksDataService()
+    
+    var lockItems: [Lock] = []
     
     private let locksTableView: UITableView
     
@@ -36,6 +29,20 @@ final class LockListViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        locksDataService.getAll { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+                case .success(let response):
+                    strongSelf.lockItems = response.locks
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
 }
 
