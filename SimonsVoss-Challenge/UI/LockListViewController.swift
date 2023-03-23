@@ -35,12 +35,15 @@ final class LockListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         locksDataService.getAll { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-                case .success(let response):
-                    strongSelf.lockItems = response.locks
-                case .failure(let error):
-                    print(error)
+            DispatchQueue.main.async {
+                guard let strongSelf = self else { return }
+                switch result {
+                    case .success(let response):
+                        strongSelf.lockItems = response.locks
+                        strongSelf.locksTableView.reloadData()
+                    case .failure(let error):
+                        print(error)
+                }
             }
         }
     }

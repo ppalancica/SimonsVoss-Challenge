@@ -21,6 +21,9 @@ class LocksDataService {
                  roomNumber: "454")
         ]
         let response = RootPageResponse(buildings: [], groups: [], locks: locks, media: [])
-        completion(.success(response))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            completion(.success(response))
+        }
     }
 }
