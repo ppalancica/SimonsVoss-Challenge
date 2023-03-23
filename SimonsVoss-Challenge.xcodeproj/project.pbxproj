@@ -16,6 +16,7 @@
 		6FDAD0E629CCF40C007AD3A6 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0E529CCF40C007AD3A6 /* Lock.swift */; };
 		6FDAD0E829CCF46E007AD3A6 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0E729CCF46E007AD3A6 /* Group.swift */; };
 		6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0E929CCF4EF007AD3A6 /* Medium.swift */; };
+		6FDAD0F029CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6FDAD0E529CCF40C007AD3A6 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6FDAD0E729CCF46E007AD3A6 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		6FDAD0E929CCF4EF007AD3A6 /* Medium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
+		6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockListViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				6FDAD0E029CCEA5D007AD3A6 /* LockListViewController.swift */,
+				6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FDAD0F029CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift in Sources */,
 				6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */,
 				6FDAD0E629CCF40C007AD3A6 /* Lock.swift in Sources */,
 				6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */,
