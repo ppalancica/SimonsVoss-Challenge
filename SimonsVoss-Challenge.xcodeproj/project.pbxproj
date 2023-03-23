@@ -9,13 +9,8 @@
 /* Begin PBXBuildFile section */
 		6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */; };
 		6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */; };
-		6FDAD0B529CCE359007AD3A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B429CCE359007AD3A6 /* ViewController.swift */; };
-		6FDAD0B829CCE359007AD3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B629CCE359007AD3A6 /* Main.storyboard */; };
 		6FDAD0BA29CCE35B007AD3A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */; };
 		6FDAD0BD29CCE35B007AD3A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAD0BB29CCE35B007AD3A6 /* LaunchScreen.storyboard */; };
-		6FDAD0C829CCE35B007AD3A6 /* SimonsVoss_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0C729CCE35B007AD3A6 /* SimonsVoss_ChallengeTests.swift */; };
-		6FDAD0D229CCE35B007AD3A6 /* SimonsVoss_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0D129CCE35B007AD3A6 /* SimonsVoss_ChallengeUITests.swift */; };
-		6FDAD0D429CCE35B007AD3A6 /* SimonsVoss_ChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0D329CCE35B007AD3A6 /* SimonsVoss_ChallengeUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +34,11 @@
 		6FDAD0AD29CCE359007AD3A6 /* SimonsVoss-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimonsVoss-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6FDAD0B429CCE359007AD3A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6FDAD0B729CCE359007AD3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FDAD0BC29CCE35B007AD3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FDAD0BE29CCE35B007AD3A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FDAD0C329CCE35B007AD3A6 /* SimonsVoss-ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimonsVoss-ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FDAD0C729CCE35B007AD3A6 /* SimonsVoss_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonsVoss_ChallengeTests.swift; sourceTree = "<group>"; };
 		6FDAD0CD29CCE35B007AD3A6 /* SimonsVoss-ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimonsVoss-ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FDAD0D129CCE35B007AD3A6 /* SimonsVoss_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonsVoss_ChallengeUITests.swift; sourceTree = "<group>"; };
-		6FDAD0D329CCE35B007AD3A6 /* SimonsVoss_ChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonsVoss_ChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +91,6 @@
 			children = (
 				6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */,
 				6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */,
-				6FDAD0B429CCE359007AD3A6 /* ViewController.swift */,
-				6FDAD0B629CCE359007AD3A6 /* Main.storyboard */,
 				6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */,
 				6FDAD0BB29CCE35B007AD3A6 /* LaunchScreen.storyboard */,
 				6FDAD0BE29CCE35B007AD3A6 /* Info.plist */,
@@ -113,7 +101,6 @@
 		6FDAD0C629CCE35B007AD3A6 /* SimonsVoss-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAD0C729CCE35B007AD3A6 /* SimonsVoss_ChallengeTests.swift */,
 			);
 			path = "SimonsVoss-ChallengeTests";
 			sourceTree = "<group>";
@@ -121,8 +108,6 @@
 		6FDAD0D029CCE35B007AD3A6 /* SimonsVoss-ChallengeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAD0D129CCE35B007AD3A6 /* SimonsVoss_ChallengeUITests.swift */,
-				6FDAD0D329CCE35B007AD3A6 /* SimonsVoss_ChallengeUITestsLaunchTests.swift */,
 			);
 			path = "SimonsVoss-ChallengeUITests";
 			sourceTree = "<group>";
@@ -233,7 +218,6 @@
 			files = (
 				6FDAD0BD29CCE35B007AD3A6 /* LaunchScreen.storyboard in Resources */,
 				6FDAD0BA29CCE35B007AD3A6 /* Assets.xcassets in Resources */,
-				6FDAD0B829CCE359007AD3A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FDAD0B529CCE359007AD3A6 /* ViewController.swift in Sources */,
 				6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */,
 				6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FDAD0C829CCE35B007AD3A6 /* SimonsVoss_ChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FDAD0D429CCE35B007AD3A6 /* SimonsVoss_ChallengeUITestsLaunchTests.swift in Sources */,
-				6FDAD0D229CCE35B007AD3A6 /* SimonsVoss_ChallengeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +277,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6FDAD0B629CCE359007AD3A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6FDAD0B729CCE359007AD3A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6FDAD0BB29CCE35B007AD3A6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,9 +413,9 @@
 				INFOPLIST_FILE = "SimonsVoss-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,9 +440,9 @@
 				INFOPLIST_FILE = "SimonsVoss-Challenge/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
