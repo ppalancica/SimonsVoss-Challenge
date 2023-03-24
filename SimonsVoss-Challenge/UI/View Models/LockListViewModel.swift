@@ -52,7 +52,17 @@ private extension LockListViewModel {
     }
     
     func createCellViewModels(from response: RootPageResponse) -> [LockCellViewModel] {
-        let viewModels = response.locks.map(LockCellViewModel.init)
+        let locks = response.locks
+        let buildings = response.buildings
+        var viewModels: [LockCellViewModel] = []
+        
+        for lock in locks {
+            guard let building = buildings.first(where: { $0.id == lock.buildingId }) else { continue }
+            
+            viewModels.append(LockCellViewModel(lock: lock,
+                                                building: building))
+        }
+        
         return viewModels
     }
 }
