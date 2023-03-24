@@ -10,11 +10,11 @@ import UIKit
 extension LockListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return lockItems.count
+        return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let lock = lockItems[indexPath.row]
+        let cellViewModel = viewModel.viewModel(at: indexPath.row)
         let reuseIdentifier = String(describing: UITableViewCell.self)
         let lockCell: UITableViewCell
         
@@ -25,7 +25,7 @@ extension LockListViewController: UITableViewDataSource {
         }
         
         lockCell.selectionStyle = .none
-        lockCell.textLabel?.text = lock.name
+        lockCell.textLabel?.text = cellViewModel?.lockName
         
         return lockCell
     }

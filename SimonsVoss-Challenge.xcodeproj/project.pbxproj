@@ -19,6 +19,9 @@
 		6FDAD0F029CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */; };
 		6FDAD0F329CD0171007AD3A6 /* LocksDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0F229CD0171007AD3A6 /* LocksDataService.swift */; };
 		6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */; };
+		6FDAD0F929CD11C2007AD3A6 /* LockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0F829CD11C2007AD3A6 /* LockListViewModel.swift */; };
+		6FDAD0FB29CD1202007AD3A6 /* LockCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FA29CD1202007AD3A6 /* LockCellViewModel.swift */; };
+		6FDAD0FD29CD1472007AD3A6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FC29CD1472007AD3A6 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LockListViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		6FDAD0F229CD0171007AD3A6 /* LocksDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksDataService.swift; sourceTree = "<group>"; };
 		6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPageResponse.swift; sourceTree = "<group>"; };
+		6FDAD0F829CD11C2007AD3A6 /* LockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockListViewModel.swift; sourceTree = "<group>"; };
+		6FDAD0FA29CD1202007AD3A6 /* LockCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockCellViewModel.swift; sourceTree = "<group>"; };
+		6FDAD0FC29CD1472007AD3A6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +158,8 @@
 		6FDAD0EC29CCF86B007AD3A6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAD0E029CCEA5D007AD3A6 /* LockListViewController.swift */,
-				6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */,
+				6FDAD0F629CD117E007AD3A6 /* View Controllers */,
+				6FDAD0F729CD119F007AD3A6 /* View Models */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -174,6 +180,25 @@
 				6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		6FDAD0F629CD117E007AD3A6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0E029CCEA5D007AD3A6 /* LockListViewController.swift */,
+				6FDAD0EF29CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6FDAD0F729CD119F007AD3A6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0F829CD11C2007AD3A6 /* LockListViewModel.swift */,
+				6FDAD0FA29CD1202007AD3A6 /* LockCellViewModel.swift */,
+				6FDAD0FC29CD1472007AD3A6 /* Observable.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FDAD0FD29CD1472007AD3A6 /* Observable.swift in Sources */,
 				6FDAD0F029CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift in Sources */,
 				6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */,
 				6FDAD0F329CD0171007AD3A6 /* LocksDataService.swift in Sources */,
@@ -315,7 +341,9 @@
 				6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */,
 				6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */,
 				6FDAD0E129CCEA5D007AD3A6 /* LockListViewController.swift in Sources */,
+				6FDAD0F929CD11C2007AD3A6 /* LockListViewModel.swift in Sources */,
 				6FDAD0E429CCF39F007AD3A6 /* Building.swift in Sources */,
+				6FDAD0FB29CD1202007AD3A6 /* LockCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

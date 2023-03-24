@@ -8,21 +8,13 @@
 import UIKit
 
 final class LockListViewController: UIViewController {
-
-    private var locksDataService = LocksDataService()
     
-    var lockItems: [Lock] = []
+    internal let viewModel: LockListViewModel
     
     private let locksTableView: UITableView
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupUI()
-        configureConstraints()
-    }
-    
     init() {
+        viewModel = LockListViewModel(service: LocksDataService())
         locksTableView = UITableView(frame: .zero, style: .plain)
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,21 +23,18 @@ final class LockListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+        configureConstraints()
+        configureBindings()
+        
+        viewModel.loadAll()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        locksDataService.getAll { [weak self] result in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else { return }
-                switch result {
-                    case .success(let response):
-                        strongSelf.lockItems = response.locks
-                        strongSelf.locksTableView.reloadData()
-                    case .failure(let error):
-                        print(error)
-                }
-            }
-        }
     }
 }
 
@@ -70,5 +59,22 @@ private extension LockListViewController {
             locksTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             locksTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
+    }
+    
+    private func configureBindings() {
+        viewModel.isLoading.bind { isLoading in
+            print(isLoading)
+        }
+        
+        viewModel.error.bind { error in
+            if let error = error {
+                print(error)
+            }
+        }
+        
+        viewModel.cellViewModels.bind { [weak self] viewModels in
+            guard let strongSelf = self else { return }
+            strongSelf.locksTableView.reloadData()
+        }
     }
 }
