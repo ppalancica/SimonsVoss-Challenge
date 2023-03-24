@@ -22,6 +22,8 @@
 		6FDAD0F929CD11C2007AD3A6 /* LockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0F829CD11C2007AD3A6 /* LockListViewModel.swift */; };
 		6FDAD0FB29CD1202007AD3A6 /* LockCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FA29CD1202007AD3A6 /* LockCellViewModel.swift */; };
 		6FDAD0FD29CD1472007AD3A6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FC29CD1472007AD3A6 /* Observable.swift */; };
+		6FDAD0FF29CE441E007AD3A6 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */; };
+		6FDAD10129CE4445007AD3A6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		6FDAD0F829CD11C2007AD3A6 /* LockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockListViewModel.swift; sourceTree = "<group>"; };
 		6FDAD0FA29CD1202007AD3A6 /* LockCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockCellViewModel.swift; sourceTree = "<group>"; };
 		6FDAD0FC29CD1472007AD3A6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 		6FDAD0F129CD0164007AD3A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */,
+				6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */,
 				6FDAD0F229CD0171007AD3A6 /* LocksDataService.swift */,
 				6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */,
 			);
@@ -341,6 +347,8 @@
 				6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */,
 				6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */,
 				6FDAD0E129CCEA5D007AD3A6 /* LockListViewController.swift in Sources */,
+				6FDAD0FF29CE441E007AD3A6 /* Endpoints.swift in Sources */,
+				6FDAD10129CE4445007AD3A6 /* HTTPClient.swift in Sources */,
 				6FDAD0F929CD11C2007AD3A6 /* LockListViewModel.swift in Sources */,
 				6FDAD0E429CCF39F007AD3A6 /* Building.swift in Sources */,
 				6FDAD0FB29CD1202007AD3A6 /* LockCellViewModel.swift in Sources */,
