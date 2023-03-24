@@ -25,13 +25,7 @@ final class LockListViewModel {
             DispatchQueue.main.async {
                 guard let strongSelf = self else { return }
                 strongSelf.isLoading.update(with: false)
-                switch result {
-                    case .success(let response):
-                        let viewModels = response.locks.map(LockCellViewModel.init)
-                        strongSelf.cellViewModels.update(with: viewModels)
-                    case .failure(let error):
-                        strongSelf.error.update(with: error)
-                }
+                strongSelf.handleLoadAllResult(result)
             }
         }
     }
@@ -42,5 +36,23 @@ final class LockListViewModel {
     
     func viewModel(at index: Int) -> LockCellViewModel? {
         return cellViewModels.value[index]
+    }
+}
+
+private extension LockListViewModel {
+    
+    func handleLoadAllResult(_ result: Result<RootPageResponse, Error>) {
+        switch result {
+            case .success(let response):
+                let viewModels = createCellViewModels(from: response)
+                cellViewModels.update(with: viewModels)
+            case .failure(let serviceError):
+                error.update(with: serviceError)
+        }
+    }
+    
+    func createCellViewModels(from response: RootPageResponse) -> [LockCellViewModel] {
+        let viewModels = response.locks.map(LockCellViewModel.init)
+        return viewModels
     }
 }
