@@ -52,8 +52,8 @@ private extension LockListViewModel {
     }
     
     func createCellViewModels(from response: RootPageResponse) -> [LockCellViewModel] {
-        let locks = response.locks
-        let buildings = response.buildings
+        let locks = response.locks.map { $0.asLock }
+        let buildings = response.buildings.map { $0.asBuilding }
         var viewModels: [LockCellViewModel] = []
         
         for lock in locks {

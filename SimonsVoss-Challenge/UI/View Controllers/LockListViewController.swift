@@ -63,7 +63,7 @@ private extension LockListViewController {
     
     private func configureBindings() {
         viewModel.isLoading.bind { isLoading in
-            print(isLoading)
+            print("isLoading = \(isLoading)")
         }
         
         viewModel.error.bind { error in
