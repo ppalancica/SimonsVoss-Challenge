@@ -26,6 +26,10 @@
 		6FDAD10129CE4445007AD3A6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */; };
 		6FDAD10329CE5881007AD3A6 /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10229CE5881007AD3A6 /* ItemsContainer.swift */; };
 		6FDAD10829CF5A50007AD3A6 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10729CF5A50007AD3A6 /* Urls.swift */; };
+		6FDAD10B29CF5BCA007AD3A6 /* BuildingDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10A29CF5BCA007AD3A6 /* BuildingDTO.swift */; };
+		6FDAD10D29CF5BE2007AD3A6 /* GroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10C29CF5BE2007AD3A6 /* GroupDTO.swift */; };
+		6FDAD10F29CF5BF3007AD3A6 /* LockDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10E29CF5BF3007AD3A6 /* LockDTO.swift */; };
+		6FDAD11129CF5C06007AD3A6 /* MediumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD11029CF5C06007AD3A6 /* MediumDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		6FDAD10229CE5881007AD3A6 /* ItemsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContainer.swift; sourceTree = "<group>"; };
 		6FDAD10729CF5A50007AD3A6 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		6FDAD10A29CF5BCA007AD3A6 /* BuildingDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDTO.swift; sourceTree = "<group>"; };
+		6FDAD10C29CF5BE2007AD3A6 /* GroupDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDTO.swift; sourceTree = "<group>"; };
+		6FDAD10E29CF5BF3007AD3A6 /* LockDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockDTO.swift; sourceTree = "<group>"; };
+		6FDAD11029CF5C06007AD3A6 /* MediumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,10 @@
 		6FDAD10629CF5A05007AD3A6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6FDAD10A29CF5BCA007AD3A6 /* BuildingDTO.swift */,
+				6FDAD10C29CF5BE2007AD3A6 /* GroupDTO.swift */,
+				6FDAD10E29CF5BF3007AD3A6 /* LockDTO.swift */,
+				6FDAD11029CF5C06007AD3A6 /* MediumDTO.swift */,
 				6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */,
 			);
 			path = Models;
@@ -378,7 +390,9 @@
 				6FDAD0FD29CD1472007AD3A6 /* Observable.swift in Sources */,
 				6FDAD0F029CCFBF8007AD3A6 /* LockListViewController+UITableViewDataSource.swift in Sources */,
 				6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */,
+				6FDAD10D29CF5BE2007AD3A6 /* GroupDTO.swift in Sources */,
 				6FDAD0F329CD0171007AD3A6 /* LocksDataService.swift in Sources */,
+				6FDAD11129CF5C06007AD3A6 /* MediumDTO.swift in Sources */,
 				6FDAD10329CE5881007AD3A6 /* ItemsContainer.swift in Sources */,
 				6FDAD0E629CCF40C007AD3A6 /* Lock.swift in Sources */,
 				6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */,
@@ -386,10 +400,12 @@
 				6FDAD10829CF5A50007AD3A6 /* Urls.swift in Sources */,
 				6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */,
 				6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */,
+				6FDAD10F29CF5BF3007AD3A6 /* LockDTO.swift in Sources */,
 				6FDAD0E129CCEA5D007AD3A6 /* LockListViewController.swift in Sources */,
 				6FDAD0FF29CE441E007AD3A6 /* Endpoints.swift in Sources */,
 				6FDAD10129CE4445007AD3A6 /* HTTPClient.swift in Sources */,
 				6FDAD0F929CD11C2007AD3A6 /* LockListViewModel.swift in Sources */,
+				6FDAD10B29CF5BCA007AD3A6 /* BuildingDTO.swift in Sources */,
 				6FDAD0E429CCF39F007AD3A6 /* Building.swift in Sources */,
 				6FDAD0FB29CD1202007AD3A6 /* LockCellViewModel.swift in Sources */,
 			);
