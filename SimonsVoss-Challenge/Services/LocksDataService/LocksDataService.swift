@@ -16,7 +16,7 @@ class LocksDataService {
     }
     
     func fetchAllItems(completion: @escaping (Result<ItemsContainer, Error>) -> Void) {
-        client.getData { [weak self] result in
+        client.getData(from: APIUrls.rootDataUrl) { [weak self] result in
             guard let strongSelf = self else { return }
             strongSelf.handleResult(result, completion: completion)
         }

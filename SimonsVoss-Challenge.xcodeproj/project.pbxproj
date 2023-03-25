@@ -25,6 +25,7 @@
 		6FDAD0FF29CE441E007AD3A6 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */; };
 		6FDAD10129CE4445007AD3A6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */; };
 		6FDAD10329CE5881007AD3A6 /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10229CE5881007AD3A6 /* ItemsContainer.swift */; };
+		6FDAD10829CF5A50007AD3A6 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10729CF5A50007AD3A6 /* Urls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		6FDAD10229CE5881007AD3A6 /* ItemsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContainer.swift; sourceTree = "<group>"; };
+		6FDAD10729CF5A50007AD3A6 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,10 +185,10 @@
 		6FDAD0F129CD0164007AD3A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */,
-				6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */,
-				6FDAD0F229CD0171007AD3A6 /* LocksDataService.swift */,
-				6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */,
+				6FDAD10929CF5AFE007AD3A6 /* LocksDataService */,
+				6FDAD10429CF52A0007AD3A6 /* API */,
+				6FDAD10529CF59C7007AD3A6 /* HTTPClient */,
+				6FDAD10629CF5A05007AD3A6 /* Models */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -208,6 +210,39 @@
 				6FDAD0FC29CD1472007AD3A6 /* Observable.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6FDAD10429CF52A0007AD3A6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0FE29CE441E007AD3A6 /* Endpoints.swift */,
+				6FDAD10729CF5A50007AD3A6 /* Urls.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6FDAD10529CF59C7007AD3A6 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD10029CE4445007AD3A6 /* HTTPClient.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		6FDAD10629CF5A05007AD3A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0F429CD03CB007AD3A6 /* RootPageResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6FDAD10929CF5AFE007AD3A6 /* LocksDataService */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAD0F229CD0171007AD3A6 /* LocksDataService.swift */,
+			);
+			path = LocksDataService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +383,7 @@
 				6FDAD0E629CCF40C007AD3A6 /* Lock.swift in Sources */,
 				6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */,
 				6FDAD0E829CCF46E007AD3A6 /* Group.swift in Sources */,
+				6FDAD10829CF5A50007AD3A6 /* Urls.swift in Sources */,
 				6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */,
 				6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */,
 				6FDAD0E129CCEA5D007AD3A6 /* LockListViewController.swift in Sources */,

@@ -9,9 +9,10 @@ import Foundation
 
 enum Endpoints: String {
     
+    case baseUrl = "https://dev.homework.system3060.com"
     case rootData = "sv_lsm_data.json"
     
     var asString: String {
-        return self.rawValue
+        return rawValue
     }
 }
