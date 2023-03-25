@@ -9,23 +9,29 @@ import Foundation
 
 class LocksDataService {
     
-    func getAll(completion: @escaping (Result<RootPageResponse, Error>) -> Void) {
-        HTTPClient().getRootData { [weak self] result in
+    private var client: HTTPClient
+    
+    init(client: HTTPClient) {
+        self.client = client
+    }
+    
+    func fetchAllItems(completion: @escaping (Result<ItemsContainer, Error>) -> Void) {
+        client.getData { [weak self] result in
             guard let strongSelf = self else { return }
-            strongSelf.handleGetAllResult(result, completion: completion)
+            strongSelf.handleResult(result, completion: completion)
         }
     }
 }
 
 private extension LocksDataService {
     
-    func handleGetAllResult(_ result: Result<Data, Error>,
-                            completion: @escaping (Result<RootPageResponse, Error>) -> Void) {
+    func handleResult(_ result: Result<Data, Error>,
+                      completion: @escaping (Result<ItemsContainer, Error>) -> Void) {
         switch result {
             case .success(let data):
                 do {
                     let root = try JSONDecoder().decode(RootPageResponse.self, from: data)
-                    completion(.success(root))
+                    completion(.success(root.asItemsContainer))
                 } catch {
                     completion(.failure(error))
                 }

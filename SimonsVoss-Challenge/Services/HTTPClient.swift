@@ -13,7 +13,7 @@ class HTTPClient {
     
     private let baseURL = URL(string: "https://dev.homework.system3060.com")!
     
-    func getRootData(completion: @escaping (Result<Data, Error>) -> Void) {
+    func getData(completion: @escaping (Result<Data, Error>) -> Void) {
         let url = baseURL.appendingPathComponent(Endpoints.rootData.asString)
         let session = URLSession.shared
         

@@ -12,6 +12,13 @@ struct RootPageResponse: Decodable {
     let groups: [GroupDTO]
     let locks: [LockDTO]
     let media: [MediumDTO]
+    
+    var asItemsContainer: ItemsContainer {
+        return ItemsContainer(buildings: buildings.map { $0.asBuilding },
+                              groups: groups.map { $0.asGroup },
+                              locks: locks.map { $0.asLock },
+                              media: media.map { $0.asMedium })
+    }
 }
 
 struct BuildingDTO: Decodable {

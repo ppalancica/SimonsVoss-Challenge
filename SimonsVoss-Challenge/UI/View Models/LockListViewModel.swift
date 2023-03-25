@@ -21,11 +21,11 @@ final class LockListViewModel {
     
     func loadAll() {
         isLoading.update(with: true)
-        service.getAll { [weak self] result in
+        service.fetchAllItems { [weak self] result in
             DispatchQueue.main.async {
                 guard let strongSelf = self else { return }
                 strongSelf.isLoading.update(with: false)
-                strongSelf.handleLoadAllResult(result)
+                strongSelf.handleFetchAllResult(result)
             }
         }
     }
@@ -41,7 +41,7 @@ final class LockListViewModel {
 
 private extension LockListViewModel {
     
-    func handleLoadAllResult(_ result: Result<RootPageResponse, Error>) {
+    func handleFetchAllResult(_ result: Result<ItemsContainer, Error>) {
         switch result {
             case .success(let response):
                 let viewModels = createCellViewModels(from: response)
@@ -51,9 +51,9 @@ private extension LockListViewModel {
         }
     }
     
-    func createCellViewModels(from response: RootPageResponse) -> [LockCellViewModel] {
-        let locks = response.locks.map { $0.asLock }
-        let buildings = response.buildings.map { $0.asBuilding }
+    func createCellViewModels(from response: ItemsContainer) -> [LockCellViewModel] {
+        let locks = response.locks
+        let buildings = response.buildings
         var viewModels: [LockCellViewModel] = []
         
         for lock in locks {

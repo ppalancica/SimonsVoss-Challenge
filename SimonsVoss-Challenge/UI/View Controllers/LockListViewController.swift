@@ -14,7 +14,7 @@ final class LockListViewController: UIViewController {
     private let locksTableView: UITableView
     
     init() {
-        viewModel = LockListViewModel(service: LocksDataService())
+        viewModel = LockListViewModel(service: LocksDataService(client: HTTPClient()))
         locksTableView = UITableView(frame: .zero, style: .plain)
         super.init(nibName: nil, bundle: nil)
     }
