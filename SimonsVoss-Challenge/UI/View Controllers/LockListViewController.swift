@@ -13,8 +13,8 @@ final class LockListViewController: UIViewController {
     
     private let locksTableView: UITableView
     
-    private var searchController: UISearchController
-    private var searchResultsVC: SearchResultsViewController
+    internal let searchController: UISearchController
+    private let searchResultsVC: SearchResultsViewController
     
     init() {
         viewModel = LockListViewModel(service: LocksDataService(client: HTTPClient()))
@@ -36,13 +36,6 @@ final class LockListViewController: UIViewController {
         configureBindings()
         
         viewModel.createPresentation()
-        
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Locks..."
-        searchController.searchBar.autocapitalizationType = .none
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-//        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,8 +51,16 @@ private extension LockListViewController {
         locksTableView.register(UINib(nibName: LockTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: LockTableViewCell.identifier)
         locksTableView.dataSource = self
-        
         view.addSubview(locksTableView)
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Locks..."
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.delegate = self
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
     }
     
     func configureConstraints() {
