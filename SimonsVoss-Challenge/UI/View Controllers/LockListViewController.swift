@@ -9,7 +9,7 @@ import UIKit
 
 final class LockListViewController: UIViewController {
     
-    internal let viewModel: LockListViewModel
+    internal let viewModel: LockListViewModelType
     
     private let locksTableView: UITableView
     
@@ -30,7 +30,7 @@ final class LockListViewController: UIViewController {
         configureConstraints()
         configureBindings()
         
-        viewModel.loadAll()
+        viewModel.createPresentation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +41,6 @@ final class LockListViewController: UIViewController {
 private extension LockListViewController {
     
     func setupUI() {
-        navigationItem.title = "Locks"
         view.backgroundColor = .white
         
         locksTableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableView.self))
@@ -62,6 +61,11 @@ private extension LockListViewController {
     }
     
     private func configureBindings() {
+        viewModel.title.bind { [weak self] title in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationItem.title = title
+        }
+        
         viewModel.isLoading.bind { isLoading in
             print("isLoading = \(isLoading)")
         }

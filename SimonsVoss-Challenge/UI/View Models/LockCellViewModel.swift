@@ -10,7 +10,17 @@
 
 import Foundation
 
-struct LockCellViewModel {
+protocol LockCellViewModelType: Any {
+    
+    init(lock: Lock, building: Building)
+    
+    var lockName: String { get }
+    var buildingShortcut: String { get }
+    var floor: String { get }
+    var roomNumber: String { get }
+}
+
+struct LockCellViewModel: LockCellViewModelType {
     
     private let lock: Lock
     private let building: Building

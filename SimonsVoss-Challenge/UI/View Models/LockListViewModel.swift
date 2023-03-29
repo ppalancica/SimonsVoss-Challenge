@@ -7,19 +7,35 @@
 
 import Foundation
 
-final class LockListViewModel {
+protocol LockListViewModelType: Any {
     
+    init(service: LocksDataServiceType)
+    
+    var title: Observable<String> { get }
+    var isLoading: Observable<Bool> { get }
+    var error: Observable<Error?> { get }
+    var cellViewModels: Observable<[LockCellViewModelType]> { get }
+    
+    func createPresentation()
+    var numberOfItems: Int { get }
+    func viewModel(at index: Int) -> LockCellViewModelType?
+}
+
+final class LockListViewModel: LockListViewModelType {
+    
+    internal let title: Observable<String> = Observable("")
     internal let isLoading: Observable<Bool> = Observable(false)
     internal let error: Observable<Error?> = Observable(nil)
-    internal let cellViewModels: Observable<[LockCellViewModel]> = Observable([])
+    internal let cellViewModels: Observable<[LockCellViewModelType]> = Observable([])
     
-    private var service: LocksDataService
+    private var service: LocksDataServiceType
     
-    init(service: LocksDataService) {
+    init(service: LocksDataServiceType) {
         self.service = service
     }
     
-    func loadAll() {
+    func createPresentation() {
+        title.update(with: "Locks")
         isLoading.update(with: true)
         service.fetchAllItems { [weak self] result in
             DispatchQueue.main.async {
@@ -34,7 +50,7 @@ final class LockListViewModel {
         return cellViewModels.value.count
     }
     
-    func viewModel(at index: Int) -> LockCellViewModel? {
+    func viewModel(at index: Int) -> LockCellViewModelType? {
         return cellViewModels.value[index]
     }
 }

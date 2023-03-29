@@ -7,7 +7,14 @@
 
 import Foundation
 
-class LocksDataService {
+protocol LocksDataServiceType: Any {
+    
+    init(client: HTTPClient)
+    
+    func fetchAllItems(completion: @escaping (Result<ItemsContainer, Error>) -> Void)
+}
+
+final class LocksDataService: LocksDataServiceType {
     
     private var client: HTTPClient
     
