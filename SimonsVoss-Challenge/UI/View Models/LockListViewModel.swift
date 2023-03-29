@@ -39,6 +39,8 @@ final class LockListViewModel: LockListViewModelType {
     }
     
     func createPresentation() {
+        guard !isLoading.value else { return }
+        
         title.update(with: "Locks")
         isLoading.update(with: true)
         service.fetchAllItems { [weak self] result in

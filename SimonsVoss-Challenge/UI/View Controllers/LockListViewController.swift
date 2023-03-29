@@ -40,12 +40,21 @@ final class LockListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    @objc func refresh() {
+        viewModel.createPresentation()
+    }
 }
 
 private extension LockListViewController {
     
     func setupUI() {
         view.backgroundColor = .white
+        
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(barButtonSystemItem: .refresh,
+                            target: self,
+                            action: #selector(refresh))
         
         locksTableView.register(UINib(nibName: LockTableViewCell.identifier, bundle: nil),
                                 forCellReuseIdentifier: LockTableViewCell.identifier)
@@ -74,7 +83,7 @@ private extension LockListViewController {
         ])
     }
     
-    private func configureBindings() {
+    func configureBindings() {
         viewModel.title.bind { [weak self] title in
             guard let strongSelf = self else { return }
             strongSelf.navigationItem.title = title
