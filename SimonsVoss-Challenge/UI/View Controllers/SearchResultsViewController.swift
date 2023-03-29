@@ -9,13 +9,8 @@ import UIKit
 
 final class SearchResultsViewController: UITableViewController {
     
-    internal var viewModels: [LockCellViewModelType] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    internal var text = ""
+    private var viewModels: [LockCellViewModelType] = []
+    private var text = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +20,7 @@ final class SearchResultsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return viewModels.count
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,5 +31,11 @@ final class SearchResultsViewController: UITableViewController {
         lockCell.configure(with: lockViewModel)
         
         return lockCell
+    }
+    
+    func updateUIForSearchText(_ text: String, viewModels: [LockCellViewModelType]) {
+        self.text = text
+        self.viewModels = viewModels
+        tableView.reloadData()
     }
 }

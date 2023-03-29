@@ -14,7 +14,10 @@ extension LockListViewController: UISearchBarDelegate {
             .searchResultsController
                 as? SearchResultsViewController else { return }
         
-        searchResultsVC.viewModels = viewModelsForSearchText(searchText)
+        searchResultsVC.updateUIForSearchText(
+            searchText,
+            viewModels: viewModelsForSearchText(searchText)
+        )
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
