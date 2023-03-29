@@ -28,9 +28,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func makeLockListViewModel() -> LockListViewModelType {
         let dataService = LocksDataService(client: HTTPClient())
-        return LockListViewModel(service: dataService)
+        let lockListVM = LockListViewModel(service: dataService)
+        lockListVM.onError = { [weak self] error in self?.showError(error) }
+        return lockListVM
     }
 
+    func showError(_ error: Error) {
+        guard let nc = window?.rootViewController else { return }
+        let title = "Something went wrong"
+        let message = error.localizedDescription
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        nc.present(alert, animated: true)
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

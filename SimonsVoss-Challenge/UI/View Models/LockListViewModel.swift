@@ -19,6 +19,8 @@ protocol LockListViewModelType: Any {
     func createPresentation()
     var numberOfItems: Int { get }
     func viewModel(at index: Int) -> LockCellViewModelType?
+    
+    var onError: ((Error) -> Void)? { get set }
 }
 
 final class LockListViewModel: LockListViewModelType {
@@ -29,6 +31,8 @@ final class LockListViewModel: LockListViewModelType {
     internal let cellViewModels: Observable<[LockCellViewModelType]> = Observable([])
     
     private var service: LocksDataServiceType
+    
+    var onError: ((Error) -> Void)?
     
     init(service: LocksDataServiceType) {
         self.service = service
@@ -57,13 +61,14 @@ final class LockListViewModel: LockListViewModelType {
 
 private extension LockListViewModel {
     
-    func handleFetchAllResult(_ result: Result<ItemsContainer, Error>) {
+    func handleFetchAllResult(_ result: Result<ItemsContainer, LocksDataServiceError>) {
         switch result {
             case .success(let response):
                 let viewModels = createCellViewModels(from: response)
                 cellViewModels.update(with: viewModels)
             case .failure(let serviceError):
                 error.update(with: serviceError)
+                onError?(serviceError)
         }
     }
     
