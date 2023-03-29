@@ -29,7 +29,7 @@ final class SearchResultsViewController: UITableViewController {
         let lockViewModel = viewModels[indexPath.row]
         
         lockCell.configure(with: lockViewModel,
-                           highlightedText: text)
+                           textToHighlight: text)
         
         return lockCell
     }

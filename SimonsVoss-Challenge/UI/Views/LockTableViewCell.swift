@@ -32,29 +32,36 @@ final class LockTableViewCell: UITableViewCell {
         roomNumberLabel.backgroundColor = .clear
     }
     
-    func configure(with viewModel: LockCellViewModelType, highlightedText: String = "") {
+    func configure(with viewModel: LockCellViewModelType, textToHighlight: String = "") {
         lockNameLabel.text = viewModel.lockName
         buildingShortcutLabel.text = viewModel.buildingShortcut
         floorLabel.text = viewModel.floor
         roomNumberLabel.text = viewModel.roomNumber
         
-        guard !highlightedText.isEmpty else { return }
+        highlightTextIfNeeded(textToHighlight, viewModel)
+    }
+}
+
+extension LockTableViewCell {
+    
+    private func highlightTextIfNeeded(_ text: String, _ viewModel: LockCellViewModelType) {
+        guard !text.isEmpty else { return }
         
-        let text = highlightedText.lowercased()
+        let textToHighlight = text.lowercased()
         
-        if viewModel.lockName.lowercased().contains(text) {
+        if viewModel.lockName.lowercased().contains(textToHighlight) {
             lockNameLabel.backgroundColor = .systemGray
         }
         
-        if viewModel.buildingShortcut.lowercased().contains(text) {
+        if viewModel.buildingShortcut.lowercased().contains(textToHighlight) {
             buildingShortcutLabel.backgroundColor = .systemGray
         }
         
-        if viewModel.floor.lowercased().contains(text) {
+        if viewModel.floor.lowercased().contains(textToHighlight) {
             floorLabel.backgroundColor = .systemGray
         }
         
-        if viewModel.roomNumber.lowercased().contains(text) {
+        if viewModel.roomNumber.lowercased().contains(textToHighlight) {
             roomNumberLabel.backgroundColor = .systemGray
         }
     }
