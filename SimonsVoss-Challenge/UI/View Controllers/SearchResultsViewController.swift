@@ -28,7 +28,8 @@ final class SearchResultsViewController: UITableViewController {
         guard let lockCell = cell as? LockTableViewCell else { return UITableViewCell() }
         let lockViewModel = viewModels[indexPath.row]
         
-        lockCell.configure(with: lockViewModel)
+        lockCell.configure(with: lockViewModel,
+                           highlightedText: text)
         
         return lockCell
     }
