@@ -12,12 +12,11 @@ final class LockListViewController: UIViewController {
     internal let viewModel: LockListViewModelType
     
     private let locksTableView: UITableView
-    
     internal let searchController: UISearchController
     private let searchResultsVC: SearchResultsViewController
     
-    init() {
-        viewModel = LockListViewModel(service: LocksDataService(client: HTTPClient()))
+    init(viewModel: LockListViewModelType) {
+        self.viewModel = viewModel
         locksTableView = UITableView(frame: .zero, style: .plain)
         searchResultsVC = SearchResultsViewController()
         searchController = UISearchController(searchResultsController: searchResultsVC)

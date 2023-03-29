@@ -20,11 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let lockListVC = LockListViewController()
-        
+        let lockListVC = LockListViewController(viewModel: makeLockListViewModel())
         window.rootViewController = UINavigationController(rootViewController: lockListVC)
         self.window = window
         window.makeKeyAndVisible()
+    }
+    
+    func makeLockListViewModel() -> LockListViewModelType {
+        let dataService = LocksDataService(client: HTTPClient())
+        return LockListViewModel(service: dataService)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
