@@ -14,8 +14,7 @@ extension LockListViewController: UISearchBarDelegate {
             .searchResultsController
                 as? SearchResultsViewController else { return }
         
-        searchResultsVC.viewModels = viewModelsFor(searchText: searchText.lowercased())
-        searchResultsVC.updateUI()
+        searchResultsVC.viewModels = viewModelsForSearchText(searchText)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -25,7 +24,8 @@ extension LockListViewController: UISearchBarDelegate {
 
 extension LockListViewController {
     
-    private func viewModelsFor(searchText text: String) -> [LockCellViewModelType] {
+    private func viewModelsForSearchText(_ text: String) -> [LockCellViewModelType] {
+        let searchText = text.lowercased()
         var viewModels: [LockCellViewModelType] = []
         
         for cellVM in viewModel.cellViewModels.value {
@@ -35,7 +35,7 @@ extension LockListViewController {
             let floor = cellVM.floor.lowercased()
             let roomNumber = cellVM.roomNumber.lowercased()
             
-            if [lockName, buildingName, buildingShortcut, floor, roomNumber].contains(text) {
+            if [lockName, buildingName, buildingShortcut, floor, roomNumber].contains(searchText) {
                 viewModels.append(cellVM)
             }
         }

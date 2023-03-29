@@ -39,8 +39,4 @@ final class SearchResultsViewController: UITableViewController {
         
         return lockCell
     }
-    
-    func updateUI() {
-        tableView.reloadData()
-    }
 }
