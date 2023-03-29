@@ -43,7 +43,8 @@ private extension LockListViewController {
     func setupUI() {
         view.backgroundColor = .white
         
-        locksTableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableView.self))
+        locksTableView.register(UINib(nibName: LockTableViewCell.identifier, bundle: nil),
+                                forCellReuseIdentifier: LockTableViewCell.identifier)
         locksTableView.dataSource = self
         
         view.addSubview(locksTableView)
@@ -51,6 +52,7 @@ private extension LockListViewController {
     
     func configureConstraints() {
         locksTableView.translatesAutoresizingMaskIntoConstraints = false
+        locksTableView.estimatedRowHeight = 132
         
         NSLayoutConstraint.activate([
             locksTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F09304329D494090023E908 /* LockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F09304129D494090023E908 /* LockTableViewCell.swift */; };
+		6F09304429D494090023E908 /* LockTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F09304229D494090023E908 /* LockTableViewCell.xib */; };
 		6FDAD0B129CCE359007AD3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */; };
 		6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */; };
 		6FDAD0BA29CCE35B007AD3A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAD0B929CCE35B007AD3A6 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F09304129D494090023E908 /* LockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockTableViewCell.swift; sourceTree = "<group>"; };
+		6F09304229D494090023E908 /* LockTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockTableViewCell.xib; sourceTree = "<group>"; };
 		6FDAD0AD29CCE359007AD3A6 /* SimonsVoss-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimonsVoss-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDAD0B029CCE359007AD3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FDAD0B229CCE359007AD3A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F09304029D493E10023E908 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F09304129D494090023E908 /* LockTableViewCell.swift */,
+				6F09304229D494090023E908 /* LockTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6FDAD0A429CCE359007AD3A6 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +190,7 @@
 			children = (
 				6FDAD0F629CD117E007AD3A6 /* View Controllers */,
 				6FDAD0F729CD119F007AD3A6 /* View Models */,
+				6F09304029D493E10023E908 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -361,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F09304429D494090023E908 /* LockTableViewCell.xib in Resources */,
 				6FDAD0BD29CCE35B007AD3A6 /* LaunchScreen.storyboard in Resources */,
 				6FDAD0BA29CCE35B007AD3A6 /* Assets.xcassets in Resources */,
 			);
@@ -397,6 +412,7 @@
 				6FDAD0E629CCF40C007AD3A6 /* Lock.swift in Sources */,
 				6FDAD0B329CCE359007AD3A6 /* SceneDelegate.swift in Sources */,
 				6FDAD0E829CCF46E007AD3A6 /* Group.swift in Sources */,
+				6F09304329D494090023E908 /* LockTableViewCell.swift in Sources */,
 				6FDAD10829CF5A50007AD3A6 /* Urls.swift in Sources */,
 				6FDAD0EA29CCF4EF007AD3A6 /* Medium.swift in Sources */,
 				6FDAD0F529CD03CB007AD3A6 /* RootPageResponse.swift in Sources */,
