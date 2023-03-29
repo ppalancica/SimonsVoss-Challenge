@@ -7,25 +7,28 @@
 
 import Foundation
 
-private struct HTTPClientError: Error {}
+enum HTTPClientError: Error {
+    case httpError(String)
+    case badResponse(String)
+}
 
 class HTTPClient {
         
     func getData(
         from url: URL,
-        completion: @escaping (Result<Data, Error>) -> Void
+        completion: @escaping (Result<Data, HTTPClientError>) -> Void
     ) {
         let session = URLSession.shared
         
         session.dataTask(with: url) { data, response, error in
             if let error = error {
-                completion(.failure(error))
+                completion(.failure(.httpError(error.localizedDescription)))
                 return
             }
             
             guard let data = data,
                 let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completion(.failure(HTTPClientError()))
+                completion(.failure(.badResponse("HTTP response status code was not 200")))
                 return
             }
             

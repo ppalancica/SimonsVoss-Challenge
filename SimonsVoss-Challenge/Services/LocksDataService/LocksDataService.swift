@@ -37,7 +37,7 @@ final class LocksDataService: LocksDataServiceType {
 
 private extension LocksDataService {
     
-    func handleResult(_ result: Result<Data, Error>,
+    func handleResult(_ result: Result<Data, HTTPClientError>,
                       completion: @escaping (Result<ItemsContainer, LocksDataServiceError>) -> Void) {
         switch result {
             case .success(let data):
@@ -45,7 +45,7 @@ private extension LocksDataService {
                     let root = try JSONDecoder().decode(RootPageResponse.self, from: data)
                     completion(.success(root.asItemsContainer))
                 } catch {
-                    completion(.failure(.dataInvalid("Could not decode to RootPageResponse")))
+                    completion(.failure(.dataInvalid(error.localizedDescription)))
                 }
             
             case .failure(let error):
