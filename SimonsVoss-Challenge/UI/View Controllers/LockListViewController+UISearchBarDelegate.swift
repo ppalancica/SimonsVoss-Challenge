@@ -47,6 +47,12 @@ private extension LockCellViewModelType {
         let floor = floor.lowercased()
         let roomNumber = roomNumber.lowercased()
         
-        return [lockName, buildingName, buildingShortcut, floor, roomNumber].contains(text)
+        for string in [lockName, buildingName, buildingShortcut, floor, roomNumber] {
+            if string.contains(text) {
+                return true
+            }
+        }
+        
+        return false
     }
 }
