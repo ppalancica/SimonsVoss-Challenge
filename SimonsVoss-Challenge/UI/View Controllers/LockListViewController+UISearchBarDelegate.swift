@@ -29,17 +29,24 @@ extension LockListViewController {
         var viewModels: [LockCellViewModelType] = []
         
         for cellVM in viewModel.cellViewModels.value {
-            let lockName = cellVM.lockName.lowercased()
-            let buildingName = cellVM.buildingName.lowercased()
-            let buildingShortcut = cellVM.buildingShortcut.lowercased()
-            let floor = cellVM.floor.lowercased()
-            let roomNumber = cellVM.roomNumber.lowercased()
-            
-            if [lockName, buildingName, buildingShortcut, floor, roomNumber].contains(searchText) {
+            if cellVM.somePropertyMatches(text: searchText) {
                 viewModels.append(cellVM)
             }
         }
         
         return viewModels
+    }
+}
+
+private extension LockCellViewModelType {
+    
+    func somePropertyMatches(text: String) -> Bool {
+        let lockName = lockName.lowercased()
+        let buildingName = buildingName.lowercased()
+        let buildingShortcut = buildingShortcut.lowercased()
+        let floor = floor.lowercased()
+        let roomNumber = roomNumber.lowercased()
+        
+        return [lockName, buildingName, buildingShortcut, floor, roomNumber].contains(text)
     }
 }
