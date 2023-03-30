@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func makeLockListViewModel() -> LockListViewModelType {
-        let dataService = LocksDataService(client: HTTPClient())
+        let dataService = LocksDataService(client: URLSessionHTTPClient())
         let lockListVM = LockListViewModel(service: dataService)
         lockListVM.onError = { [weak self] error in self?.showError(error) }
         return lockListVM

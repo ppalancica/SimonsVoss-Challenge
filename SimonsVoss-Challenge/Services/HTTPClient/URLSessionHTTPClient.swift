@@ -1,18 +1,13 @@
 //
-//  HTTPClient.swift
+//  URLSessionHTTPClient.swift
 //  SimonsVoss-Challenge
 //
-//  Created by Pavel Palancica on 24.03.2023.
+//  Created by Pavel Palancica on 30.03.2023.
 //
 
 import Foundation
 
-enum HTTPClientError: Error {
-    case httpError(String)
-    case badResponse(String)
-}
-
-class HTTPClient {
+final class URLSessionHTTPClient: HTTPClientType {
         
     func getData(
         from url: URL,

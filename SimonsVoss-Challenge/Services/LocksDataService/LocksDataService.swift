@@ -7,23 +7,11 @@
 
 import Foundation
 
-enum LocksDataServiceError: Error {
-    case connectionOrWebIssue(String)
-    case dataInvalid(String)
-}
-
-protocol LocksDataServiceType: Any {
-    
-    init(client: HTTPClient)
-    
-    func fetchAllItems(completion: @escaping (Result<ItemsContainer, LocksDataServiceError>) -> Void)
-}
-
 final class LocksDataService: LocksDataServiceType {
     
-    private var client: HTTPClient
+    private var client: HTTPClientType
     
-    init(client: HTTPClient) {
+    init(client: HTTPClientType) {
         self.client = client
     }
     
