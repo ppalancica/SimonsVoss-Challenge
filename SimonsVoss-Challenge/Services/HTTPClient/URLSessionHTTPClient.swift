@@ -8,13 +8,17 @@
 import Foundation
 
 final class URLSessionHTTPClient: HTTPClientType {
+    
+    private let session: URLSession
+    
+    init(session: URLSession = URLSession(configuration: .ephemeral)) {
+        self.session = session
+    }
         
     func getData(
         from url: URL,
         completion: @escaping (Result<Data, HTTPClientError>) -> Void
     ) {
-        let session = URLSession.shared
-        
         session.dataTask(with: url) { data, response, error in
             if let error = error {
                 completion(.failure(.httpError(error.localizedDescription)))

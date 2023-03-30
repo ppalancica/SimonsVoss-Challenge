@@ -34,14 +34,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func showError(_ error: Error) {
-        guard let nc = window?.rootViewController else { return }
+        guard let nc = window?.rootViewController as? UINavigationController,
+                let lockListVC = nc.topViewController as? LockListViewController else { return }
         let title = "Something went wrong"
         let message = error.localizedDescription
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
-        nc.present(alert, animated: true)
+        lockListVC.present(alert, animated: true)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
