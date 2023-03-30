@@ -7,22 +7,6 @@
 
 import Foundation
 
-protocol LockListViewModelType: Any {
-    
-    init(service: LocksDataServiceType)
-    
-    var title: Observable<String> { get }
-    var isLoading: Observable<Bool> { get }
-    var error: Observable<Error?> { get }
-    var cellViewModels: Observable<[LockCellViewModelType]> { get }
-    
-    func createPresentation()
-    var numberOfItems: Int { get }
-    func viewModel(at index: Int) -> LockCellViewModelType?
-    
-    var onError: ((Error) -> Void)? { get set }
-}
-
 final class LockListViewModel: LockListViewModelType {
     
     internal let title: Observable<String> = Observable("")
