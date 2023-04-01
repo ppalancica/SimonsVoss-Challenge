@@ -24,8 +24,11 @@ final class SearchResultsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LockTableViewCell.identifier)
-        guard let lockCell = cell as? LockTableViewCell else { return UITableViewCell() }
+        guard let lockCell = tableView.dequeueReusableCell(
+            withIdentifier: LockTableViewCell.identifier,
+            for: indexPath
+        ) as? LockTableViewCell else { return UITableViewCell() }
+        
         let lockViewModel = viewModels[indexPath.row]
         
         lockCell.configure(with: lockViewModel,

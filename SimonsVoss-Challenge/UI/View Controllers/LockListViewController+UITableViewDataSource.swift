@@ -14,9 +14,10 @@ extension LockListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LockTableViewCell.identifier)
         let viewModel = viewModel.viewModel(at: indexPath.row)
-                        
+        let cell = tableView.dequeueReusableCell(withIdentifier: LockTableViewCell.identifier,
+                                                 for: indexPath)
+        
         guard let lockCell = cell as? LockTableViewCell,
               let lockViewModel = viewModel else { return UITableViewCell() }
         
