@@ -15,6 +15,12 @@ final class LockListViewController: UIViewController {
     internal let searchController: UISearchController
     private let searchResultsVC: SearchResultsViewController
     
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.style = .large
+        return view
+    }()
+    
     init(viewModel: LockListViewModelType) {
         self.viewModel = viewModel
         locksTableView = UITableView(frame: .zero, style: .plain)
@@ -60,6 +66,7 @@ private extension LockListViewController {
                                 forCellReuseIdentifier: LockTableViewCell.identifier)
         locksTableView.dataSource = self
         view.addSubview(locksTableView)
+        locksTableView.addSubview(activityIndicatorView)
         
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Locks..."
@@ -73,13 +80,16 @@ private extension LockListViewController {
     
     func configureConstraints() {
         locksTableView.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
         locksTableView.estimatedRowHeight = 132
         
         NSLayoutConstraint.activate([
             locksTableView.topAnchor.constraint(equalTo: view.topAnchor),
             locksTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             locksTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            locksTableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            locksTableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -89,8 +99,13 @@ private extension LockListViewController {
             strongSelf.navigationItem.title = title
         }
         
-        viewModel.isLoading.bind { isLoading in
-            print("isLoading = \(isLoading)")
+        viewModel.isLoading.bind { [weak self] isLoading in
+            guard let strongSelf = self else { return }
+            if isLoading {
+                strongSelf.activityIndicatorView.startAnimating()
+            } else {
+                strongSelf.activityIndicatorView.stopAnimating()
+            }
         }
         
         viewModel.error.bind { error in
