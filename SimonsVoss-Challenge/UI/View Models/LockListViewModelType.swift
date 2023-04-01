@@ -18,5 +18,5 @@ protocol LockListViewModelType: Any {
     var numberOfItems: Int { get }
     func viewModel(at index: Int) -> LockCellViewModelType?
     
-    var onError: ((Error) -> Void)? { get set }
+    var onError: ((Error) -> Void)? { get }
 }

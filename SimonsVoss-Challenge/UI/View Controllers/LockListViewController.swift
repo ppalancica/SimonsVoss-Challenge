@@ -76,10 +76,10 @@ private extension LockListViewController {
         locksTableView.estimatedRowHeight = 132
         
         NSLayoutConstraint.activate([
-            locksTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            locksTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            locksTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            locksTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+            locksTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            locksTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            locksTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            locksTableView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
     }
     
