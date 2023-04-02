@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum HTTPClientError: Error {
-    case badResponse(String)
-}
-
 protocol HTTPClientType {
     
     func getData(from url: URL) async throws -> Data

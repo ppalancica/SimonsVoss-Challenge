@@ -19,9 +19,16 @@ final class LocksDataService: LocksDataServiceType {
         let data = try await client.getData(from: APIUrls.rootDataUrl)
         
         guard let rootPageResponse = try? JSONDecoder().decode(RootPageResponse.self, from: data) else {
-            throw LocksDataServiceError.errorDecodingData("Could not decode to RootPageResponse type")
+            throw Error.errorDecodingData("Could not decode to RootPageResponse type")
         }
         
         return rootPageResponse.asItemsContainer
+    }
+}
+
+extension LocksDataService {
+
+    enum Error: Swift.Error {
+        case errorDecodingData(String)
     }
 }

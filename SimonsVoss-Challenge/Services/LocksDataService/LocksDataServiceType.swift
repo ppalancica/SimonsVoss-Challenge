@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum LocksDataServiceError: Error {
-    case errorDecodingData(String)
-}
-
 protocol LocksDataServiceType: Any {
     
     init(client: HTTPClientType)

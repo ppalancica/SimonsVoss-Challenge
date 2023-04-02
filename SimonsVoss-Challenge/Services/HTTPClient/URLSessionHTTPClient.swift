@@ -19,9 +19,16 @@ final class URLSessionHTTPClient: HTTPClientType {
         let (data, response) = try await session.data(from: url)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw HTTPClientError.badResponse("HTTP response status code was not 200")
+            throw Error.badResponse("HTTP response status code was not 200")
         }
         
         return data
+    }
+}
+
+extension URLSessionHTTPClient {
+
+    enum Error: Swift.Error {
+        case badResponse(String)
     }
 }
