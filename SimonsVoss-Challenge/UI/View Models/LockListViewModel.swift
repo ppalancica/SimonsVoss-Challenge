@@ -7,13 +7,12 @@
 
 import Foundation
 
-@MainActor
 final class LockListViewModel: LockListViewModelType {
     
-    nonisolated internal let title: Observable<String> = Observable("")
-    nonisolated internal let isLoading: Observable<Bool> = Observable(false)
-    nonisolated internal let error: Observable<Error?> = Observable(nil)
-    nonisolated internal let cellViewModels: Observable<[LockCellViewModelType]> = Observable([])
+    internal let title: Observable<String> = Observable("")
+    internal let isLoading: Observable<Bool> = Observable(false)
+    internal let error: Observable<Error?> = Observable(nil)
+    internal let cellViewModels: Observable<[LockCellViewModelType]> = Observable([])
     
     private var service: LocksDataServiceType
     
@@ -23,7 +22,7 @@ final class LockListViewModel: LockListViewModelType {
         self.service = service
     }
     
-    func createPresentation() async {
+    @MainActor func createPresentation() async {
         guard !isLoading.value else { return }
         
         title.update(with: "Locks")
@@ -41,11 +40,11 @@ final class LockListViewModel: LockListViewModelType {
         isLoading.update(with: false)
     }
     
-    nonisolated var numberOfItems: Int {
+    var numberOfItems: Int {
         return cellViewModels.value.count
     }
     
-    nonisolated func viewModel(at index: Int) -> LockCellViewModelType? {
+    func viewModel(at index: Int) -> LockCellViewModelType? {
         guard index >= 0 && index < numberOfItems else {
             return nil
         }
