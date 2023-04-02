@@ -17,17 +17,11 @@ final class LocksDataService: LocksDataServiceType {
     
     func fetchAllItems() async throws -> ItemsContainer {
         let data = try await client.getData(from: APIUrls.rootDataUrl)
-        let itemsContainer = try handleResultData(data)
         
-        return itemsContainer
-    }
-}
-
-private extension LocksDataService {
-    
-    func handleResultData(_ data: Data) throws -> ItemsContainer {
-        let root = try JSONDecoder().decode(RootPageResponse.self, from: data)
+        guard let rootPageResponse = try? JSONDecoder().decode(RootPageResponse.self, from: data) else {
+            throw LocksDataServiceError.errorDecodingData("Could not decode to RootPageResponse type")
+        }
         
-        return root.asItemsContainer
+        return rootPageResponse.asItemsContainer
     }
 }
