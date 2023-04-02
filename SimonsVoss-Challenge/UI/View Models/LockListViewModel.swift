@@ -41,7 +41,7 @@ final class LockListViewModel: LockListViewModelType {
         isLoading.update(with: false)
     }
     
-    var numberOfItems: Int {
+    nonisolated var numberOfItems: Int {
         return cellViewModels.value.count
     }
     
