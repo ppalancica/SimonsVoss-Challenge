@@ -41,7 +41,9 @@
 		6FE078B929D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */; };
 		6FE078BD29D9CCE000EC7D77 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */; };
 		6FE078BF29D9CEC300EC7D77 /* RootPageResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */; };
-		6FE078C129D9CFBD00EC7D77 /* MockDataLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078C029D9CFBD00EC7D77 /* MockDataLoadable.swift */; };
+		6FE078C129D9CFBD00EC7D77 /* MockableHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078C029D9CFBD00EC7D77 /* MockableHTTP.swift */; };
+		6FE078C329D9D75900EC7D77 /* MockableLocksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078C229D9D75900EC7D77 /* MockableLocksData.swift */; };
+		6FE078C529D9D7B600EC7D77 /* MockLocksDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078C429D9D7B600EC7D77 /* MockLocksDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +94,9 @@
 		6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonsVoss_ChallengeTests.swift; sourceTree = "<group>"; };
 		6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RootPageResponse.json; sourceTree = "<group>"; };
-		6FE078C029D9CFBD00EC7D77 /* MockDataLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoadable.swift; sourceTree = "<group>"; };
+		6FE078C029D9CFBD00EC7D77 /* MockableHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableHTTP.swift; sourceTree = "<group>"; };
+		6FE078C229D9D75900EC7D77 /* MockableLocksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableLocksData.swift; sourceTree = "<group>"; };
+		6FE078C429D9D7B600EC7D77 /* MockLocksDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocksDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +160,7 @@
 		6FDAD0C629CCE35B007AD3A6 /* SimonsVoss-ChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				6FE078C029D9CFBD00EC7D77 /* MockDataLoadable.swift */,
-				6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */,
-				6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */,
+				6FE078C629D9DFE500EC7D77 /* Mocks */,
 				6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */,
 			);
 			path = "SimonsVoss-ChallengeTests";
@@ -275,6 +277,18 @@
 				6F09304929D55D5A0023E908 /* LocksDataServiceType.swift */,
 			);
 			path = LocksDataService;
+			sourceTree = "<group>";
+		};
+		6FE078C629D9DFE500EC7D77 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6FE078C029D9CFBD00EC7D77 /* MockableHTTP.swift */,
+				6FE078C229D9D75900EC7D77 /* MockableLocksData.swift */,
+				6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */,
+				6FE078C429D9D7B600EC7D77 /* MockLocksDataService.swift */,
+				6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,9 +429,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FE078C129D9CFBD00EC7D77 /* MockDataLoadable.swift in Sources */,
+				6FE078C129D9CFBD00EC7D77 /* MockableHTTP.swift in Sources */,
 				6FE078BD29D9CCE000EC7D77 /* MockHTTPClient.swift in Sources */,
+				6FE078C329D9D75900EC7D77 /* MockableLocksData.swift in Sources */,
 				6FE078B929D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift in Sources */,
+				6FE078C529D9D7B600EC7D77 /* MockLocksDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

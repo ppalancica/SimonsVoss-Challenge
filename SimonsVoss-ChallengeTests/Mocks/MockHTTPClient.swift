@@ -8,7 +8,7 @@
 import Foundation
 @testable import SimonsVoss_Challenge
 
-final class MockHTTPClient: HTTPClientType, MockDataLoadable {
+final class MockHTTPClient: HTTPClientType, MockableHTTP {
     
     func getData(from url: URL) async throws -> Data {
         return loadJSON(fileName: "RootPageResponse")

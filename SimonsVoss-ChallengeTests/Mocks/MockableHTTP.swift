@@ -1,5 +1,5 @@
 //
-//  MockDataLoadable.swift
+//  MockableHTTP.swift
 //  SimonsVoss-ChallengeTests
 //
 //  Created by Pavel Palancica on 02.04.2023.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol MockDataLoadable: AnyObject {
+protocol MockableHTTP: AnyObject {
     
     var bundle: Bundle { get }
     
     func loadJSON(fileName: String) -> Data
 }
 
-extension MockDataLoadable {
+extension MockableHTTP {
     
     var bundle: Bundle {
         return Bundle(for: type(of: self))
