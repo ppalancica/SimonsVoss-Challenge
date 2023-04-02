@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class LockListViewModel: LockListViewModelType {
     
     internal let title: Observable<String> = Observable("")
@@ -22,18 +23,22 @@ final class LockListViewModel: LockListViewModelType {
         self.service = service
     }
     
-    func createPresentation() {
+    func createPresentation() async {
         guard !isLoading.value else { return }
         
         title.update(with: "Locks")
         isLoading.update(with: true)
-        service.fetchAllItems { [weak self] result in
-            DispatchQueue.main.async {
-                guard let strongSelf = self else { return }
-                strongSelf.isLoading.update(with: false)
-                strongSelf.handleFetchAllResult(result)
-            }
+        
+        do {
+            let itemsContainer = try await service.fetchAllItems()
+            let viewModels = createCellViewModels(from: itemsContainer)
+            cellViewModels.update(with: viewModels)
+        } catch (let serviceError) {
+            error.update(with: serviceError)
+            onError?(serviceError)
         }
+        
+        isLoading.update(with: false)
     }
     
     var numberOfItems: Int {
@@ -46,17 +51,6 @@ final class LockListViewModel: LockListViewModelType {
 }
 
 private extension LockListViewModel {
-    
-    func handleFetchAllResult(_ result: Result<ItemsContainer, LocksDataServiceError>) {
-        switch result {
-            case .success(let response):
-                let viewModels = createCellViewModels(from: response)
-                cellViewModels.update(with: viewModels)
-            case .failure(let serviceError):
-                error.update(with: serviceError)
-                onError?(serviceError)
-        }
-    }
     
     func createCellViewModels(from response: ItemsContainer) -> [LockCellViewModel] {
         let locks = response.locks

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 protocol LockListViewModelType: Any {
     
     var title: Observable<String> { get }
@@ -14,7 +15,7 @@ protocol LockListViewModelType: Any {
     var error: Observable<Error?> { get }
     var cellViewModels: Observable<[LockCellViewModelType]> { get }
     
-    func createPresentation()
+    func createPresentation() async
     var numberOfItems: Int { get }
     func viewModel(at index: Int) -> LockCellViewModelType?
     

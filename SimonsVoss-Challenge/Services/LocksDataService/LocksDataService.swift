@@ -15,29 +15,19 @@ final class LocksDataService: LocksDataServiceType {
         self.client = client
     }
     
-    func fetchAllItems(completion: @escaping (Result<ItemsContainer, LocksDataServiceError>) -> Void) {
-        client.getData(from: APIUrls.rootDataUrl) { [weak self] result in
-            guard let strongSelf = self else { return }
-            strongSelf.handleResult(result, completion: completion)
-        }
+    func fetchAllItems() async throws -> ItemsContainer {
+        let data = try await client.getData(from: APIUrls.rootDataUrl)
+        let itemsContainer = try handleResultData(data)
+        
+        return itemsContainer
     }
 }
 
 private extension LocksDataService {
     
-    func handleResult(_ result: Result<Data, HTTPClientError>,
-                      completion: @escaping (Result<ItemsContainer, LocksDataServiceError>) -> Void) {
-        switch result {
-            case .success(let data):
-                do {
-                    let root = try JSONDecoder().decode(RootPageResponse.self, from: data)
-                    completion(.success(root.asItemsContainer))
-                } catch {
-                    completion(.failure(.dataInvalid(error.localizedDescription)))
-                }
-            
-            case .failure(let error):
-                completion(.failure(.connectionOrWebIssue(error.localizedDescription)))
-        }
+    func handleResultData(_ data: Data) throws -> ItemsContainer {
+        let root = try JSONDecoder().decode(RootPageResponse.self, from: data)
+        
+        return root.asItemsContainer
     }
 }

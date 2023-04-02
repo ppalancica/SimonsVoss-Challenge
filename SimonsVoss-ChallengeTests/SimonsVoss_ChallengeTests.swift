@@ -8,4 +8,9 @@
 import XCTest
 @testable import SimonsVoss_Challenge
 
-final class SimonsVoss_ChallengeTests: XCTestCase {}
+final class SimonsVoss_ChallengeTests: XCTestCase {
+    
+    override func setUp() {}
+    
+    override func tearDown() {}    
+}

@@ -40,7 +40,9 @@ final class LockListViewController: UIViewController {
         configureConstraints()
         configureBindings()
         
-        viewModel.createPresentation()
+        Task {
+            await viewModel.createPresentation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +50,9 @@ final class LockListViewController: UIViewController {
     }
     
     @objc func refresh() {
-        viewModel.createPresentation()
+        Task {
+            await viewModel.createPresentation()
+        }
     }
 }
 

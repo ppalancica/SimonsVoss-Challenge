@@ -8,14 +8,10 @@
 import Foundation
 
 enum HTTPClientError: Error {
-    case httpError(String)
     case badResponse(String)
 }
 
 protocol HTTPClientType {
     
-    func getData(
-        from url: URL,
-        completion: @escaping (Result<Data, HTTPClientError>) -> Void
-    )
+    func getData(from url: URL) async throws -> Data
 }
