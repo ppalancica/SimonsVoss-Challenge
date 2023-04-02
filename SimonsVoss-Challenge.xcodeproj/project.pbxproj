@@ -38,7 +38,6 @@
 		6FDAD10D29CF5BE2007AD3A6 /* GroupDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10C29CF5BE2007AD3A6 /* GroupDTO.swift */; };
 		6FDAD10F29CF5BF3007AD3A6 /* LockDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD10E29CF5BF3007AD3A6 /* LockDTO.swift */; };
 		6FDAD11129CF5C06007AD3A6 /* MediumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAD11029CF5C06007AD3A6 /* MediumDTO.swift */; };
-		6FE078B929D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */; };
 		6FE078BD29D9CCE000EC7D77 /* MockHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */; };
 		6FE078BF29D9CEC300EC7D77 /* RootPageResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */; };
 		6FE078C129D9CFBD00EC7D77 /* MockableHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE078C029D9CFBD00EC7D77 /* MockableHTTP.swift */; };
@@ -92,7 +91,6 @@
 		6FDAD10C29CF5BE2007AD3A6 /* GroupDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDTO.swift; sourceTree = "<group>"; };
 		6FDAD10E29CF5BF3007AD3A6 /* LockDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockDTO.swift; sourceTree = "<group>"; };
 		6FDAD11029CF5C06007AD3A6 /* MediumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumDTO.swift; sourceTree = "<group>"; };
-		6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimonsVoss_ChallengeTests.swift; sourceTree = "<group>"; };
 		6FE078BC29D9CCE000EC7D77 /* MockHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPClient.swift; sourceTree = "<group>"; };
 		6FE078BE29D9CEC300EC7D77 /* RootPageResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = RootPageResponse.json; sourceTree = "<group>"; };
 		6FE078C029D9CFBD00EC7D77 /* MockableHTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockableHTTP.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			children = (
 				6FE078C729D9E16500EC7D77 /* LockListViewModelTests.swift */,
 				6FE078C629D9DFE500EC7D77 /* Mocks */,
-				6FE078B829D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift */,
 			);
 			path = "SimonsVoss-ChallengeTests";
 			sourceTree = "<group>";
@@ -435,7 +432,6 @@
 				6FE078C129D9CFBD00EC7D77 /* MockableHTTP.swift in Sources */,
 				6FE078BD29D9CCE000EC7D77 /* MockHTTPClient.swift in Sources */,
 				6FE078C329D9D75900EC7D77 /* MockableLocksData.swift in Sources */,
-				6FE078B929D991CF00EC7D77 /* SimonsVoss_ChallengeTests.swift in Sources */,
 				6FE078C529D9D7B600EC7D77 /* MockLocksDataService.swift in Sources */,
 				6FE078C829D9E16500EC7D77 /* LockListViewModelTests.swift in Sources */,
 			);
